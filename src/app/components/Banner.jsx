@@ -1,12 +1,20 @@
-import Link from 'next/link';
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
 const Banner = () => {
   return (
     <div
-      className="relative h-[600px] w-full max-w-5xl mx-auto bg-cover bg-center rounded-2xl overflow-hidden mt-10"
+      className="
+      relative w-[90%] mx-auto mt-10 overflow-hidden
+      h-[300px] sm:h-[400px] md:h-[550px]
+      shadow-2xl shadow-black/50
+
+      rounded-none md:rounded-2xl
+      "
       style={{
         backgroundImage: "url('/images/banner.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       {/* 🌑 Overlay */}
@@ -14,15 +22,21 @@ const Banner = () => {
 
       {/* ✨ Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-        <h1 className="text-4xl md:text-5xl font-bold">
+        
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold">
           Learn Anytime, Anywhere
         </h1>
-        <p className="mt-4 text-lg">
+
+        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg opacity-90">
           Upgrade your skills with top courses
         </p>
-        <button className="btn btn-primary mt-6">
-            <Link href="/courses">Explore Courses</Link>
-        </button>
+
+        <Link
+          href="/courses"
+          className="mt-6 btn btn-primary px-6 py-2 text-sm sm:text-base"
+        >
+          Explore Courses
+        </Link>
       </div>
     </div>
   );
