@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch.",
+    "image": "/images/img1.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "UI/UX Design Masterclass",
+    "instructor": "Sarah Smith",
+    "duration": "15 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Design modern and user-friendly interfaces.",
+    "image": "/images/img2.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 3,
+    "title": "Digital Marketing Pro",
+    "instructor": "Mike Johnson",
+    "duration": "18 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Master SEO, ads, and social media marketing.",
+    "image": "/images/img3.jpg",
+    "category": "Marketing"
+  },
+  {
+    "id": 4,
+    "title": "React & Next.js Advanced",
+    "instructor": "David Lee",
+    "duration": "22 hours",
+    "rating": 4.9,
+    "level": "Advanced",
+    "description": "Build production-ready React apps.",
+    "image": "/images/img4.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 5,
+    "title": "Graphic Design Basics",
+    "instructor": "Emily Brown",
+    "duration": "12 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Learn Photoshop and Illustrator basics.",
+    "image": "/images/img5.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 6,
+    "title": "Python for Beginners",
+    "instructor": "Chris Evans",
+    "duration": "25 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Start coding with Python easily.",
+    "image": "/images/img6.jpg",
+    "category": "Development"
+  }
+]
