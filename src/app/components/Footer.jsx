@@ -16,7 +16,7 @@ const Footer = () => {
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
 
-    {/* 🔹 Brand + Contact */}
+  
     <div>
       <h2 className="text-2xl font-bold mb-3 text-primary">
         SkillSphere
@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
     </div>
 
-    {/* 🔹 Links */}
+
     <div>
       <h3 className="font-semibold text-lg mb-3">Quick Links</h3>
       <ul className="space-y-2 text-sm">
@@ -49,7 +49,7 @@ const Footer = () => {
       </ul>
     </div>
 
-    {/* 🔹 Social Icons */}
+   
     <div>
       <h3 className="font-semibold text-lg mb-3">Follow Us</h3>
 
@@ -78,7 +78,7 @@ const Footer = () => {
 
   </div>
 
-  {/* 🔻 Bottom */}
+ 
   <div className="border-t border-gray-700 text-center py-4 text-sm opacity-80">
     © {new Date().getFullYear()} SkillSphere. All rights reserved.
   </div>

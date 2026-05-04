@@ -51,10 +51,10 @@ const Banner = () => {
                 backgroundPosition: "center",
               }}
             >
-              {/* Overlay */}
+           
               <div className="absolute inset-0 bg-black/50"></div>
 
-              {/* Content */}
+           
               <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
                 
                 <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold">

@@ -13,7 +13,7 @@ const UpdateProfilePage = () => {
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // 🔒 protect route
+  
   useEffect(() => {
     if (!isPending && !session?.user) {
       router.replace("/auth/signin?redirect=/profile/update");
@@ -35,7 +35,7 @@ const UpdateProfilePage = () => {
 
   if (!session?.user) return null;
 
-  // 🚀 UPDATE USER HANDLER
+
   const handleUpdate = async () => {
     try {
       setLoading(true);

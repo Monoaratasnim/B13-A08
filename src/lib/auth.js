@@ -8,10 +8,10 @@ if (!uri) {
   throw new Error("AUTH_DB_URI is missing");
 }
 
-// ✅ create client once
+
 const client = new MongoClient(uri);
 
-// ✅ cached connection (important)
+
 let clientPromise = client.connect();
 
 export const auth = betterAuth({

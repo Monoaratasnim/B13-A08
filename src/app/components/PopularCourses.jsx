@@ -25,7 +25,7 @@ const PopularCourses = () => {
   return (
     <div className="w-[92%] mx-auto py-12">
 
-      {/* Section Title */}
+    
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold">
           🔥 Popular Courses
@@ -35,7 +35,7 @@ const PopularCourses = () => {
         </p>
       </div>
 
-      {/* Cards */}
+     
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course) => (
           <CourseCard key={course.id} course={course} />

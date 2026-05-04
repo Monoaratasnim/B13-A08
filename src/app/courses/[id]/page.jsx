@@ -16,7 +16,7 @@ const CourseDetailsPage = () => {
 
   const hasRedirected = useRef(false);
 
-  // 🔒 AUTH GUARD
+
   useEffect(() => {
     if (isPending) return;
 
@@ -34,7 +34,7 @@ const CourseDetailsPage = () => {
     }
   }, [session, isPending, router, params.id]);
 
-  // 📦 FETCH COURSE DATA
+
   useEffect(() => {
     const fetchCourse = async () => {
       try {
@@ -59,7 +59,7 @@ const CourseDetailsPage = () => {
     fetchCourse();
   }, [params.id]);
 
-  // ⏳ LOADING STATE (IMPORTANT FIX)
+ 
   if (isPending || loading || !allowed) {
     return (
       <div className="flex justify-center items-center min-h-[60vh]">
@@ -68,7 +68,7 @@ const CourseDetailsPage = () => {
     );
   }
 
-  // ❌ NOT FOUND (NO FLASH NOW)
+ 
   if (!loading && !course) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
@@ -90,7 +90,7 @@ const CourseDetailsPage = () => {
     );
   }
 
-  // 📚 STATIC CURRICULUM
+
   const curriculum = [
     {
       module: "Module 1: Introduction",

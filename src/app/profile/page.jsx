@@ -8,7 +8,7 @@ const ProfilePage = () => {
   const router = useRouter();
   const { data: session, isPending } = useSession();
 
-  // 🔒 protect route
+ 
   useEffect(() => {
     if (!isPending && !session?.user) {
       router.replace("/auth/signin?redirect=/profile");
@@ -32,7 +32,7 @@ const ProfilePage = () => {
 
       <div className="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-6 sm:p-10 border">
 
-        {/* PROFILE HEADER */}
+      
         <div className="flex flex-col sm:flex-row items-center gap-6">
 
           <img
@@ -51,7 +51,7 @@ const ProfilePage = () => {
 
         </div>
 
-        {/* ACTION BUTTON */}
+   
         <div className="mt-8">
           <button
             onClick={() => router.push("/profile/update")}

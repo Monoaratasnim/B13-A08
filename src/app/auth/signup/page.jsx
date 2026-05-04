@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { signUp, signIn, signOut } from "@/lib/auth-client"; // ✅ add signOut
+import { signUp, signIn, signOut } from "@/lib/auth-client"; 
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import toast from "react-hot-toast";
@@ -32,7 +32,7 @@ const SignUpPage = () => {
         return;
       }
 
-      // ✅ IMPORTANT FIX (forces logout after signup)
+   
       await signOut();
 
       toast.success("Account created successfully 🎉");

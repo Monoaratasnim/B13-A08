@@ -31,7 +31,7 @@ const TopInstructors = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
 
-      {/* Title */}
+      
       <div className="text-center mb-12">
         <h2 className="text-2xl sm:text-3xl font-bold">
           🏆 Top Instructors
@@ -41,7 +41,7 @@ const TopInstructors = () => {
         </p>
       </div>
 
-      {/* Cards */}
+     
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
 
         {instructors.map((inst) => (
@@ -60,10 +60,10 @@ const TopInstructors = () => {
               hover:-translate-y-1
             "
           >
-            {/* Image */}
+          
             <div className="relative w-24 h-24 mx-auto mb-4">
 
-              {/* gradient ring */}
+             
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 p-[2px]">
                 <div className="w-full h-full bg-white rounded-full"></div>
               </div>
@@ -76,17 +76,17 @@ const TopInstructors = () => {
               />
             </div>
 
-            {/* Name */}
+           
             <h3 className="font-semibold text-gray-800 group-hover:text-purple-600 transition">
               {inst.name}
             </h3>
 
-            {/* Role */}
+           
             <p className="text-sm text-gray-500 mt-1">
               {inst.role}
             </p>
 
-            {/* Optional small badge */}
+         
             <span className="inline-block mt-3 text-xs px-3 py-1 bg-gray-100 rounded-full">
               Expert
             </span>

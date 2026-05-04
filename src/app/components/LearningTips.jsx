@@ -25,7 +25,7 @@ const LearningTips = () => {
   return (
     <div className="w-[92%] mx-auto py-14">
 
-      {/* Title */}
+   
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
           📌 Learning Tips
@@ -35,7 +35,7 @@ const LearningTips = () => {
         </p>
       </div>
 
-      {/* Cards */}
+  
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         {tips.map((tip) => (
@@ -51,19 +51,19 @@ const LearningTips = () => {
               text-center
             "
           >
-            {/* Icon circle */}
+        
             <div className="mb-4 flex justify-center">
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 shadow-inner">
                 {tip.icon}
               </div>
             </div>
 
-            {/* Title */}
+         
             <h3 className="font-semibold text-lg text-gray-800">
               {tip.title}
             </h3>
 
-            {/* Description */}
+       
             <p className="text-gray-500 text-sm mt-2 leading-relaxed">
               {tip.desc}
             </p>

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const SignInPage = () => {
   const router = useRouter();
-  const searchParams = useSearchParams(); // ✅ ADDED
+  const searchParams = useSearchParams(); 
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -30,7 +30,7 @@ const SignInPage = () => {
       if (res?.error) {
         setError(res.error.message || "Login failed");
       } else {
-        // ✅ FIXED: redirect back to previous page if exists
+     
         router.push(searchParams.get("redirect") || "/");
       }
     } catch (err) {
@@ -45,20 +45,20 @@ const SignInPage = () => {
 
       <div className="bg-white p-8 rounded-xl shadow-xl w-full max-w-md">
 
-        {/* Title */}
+      
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
           Login to Your Account
         </h2>
 
-        {/* Error */}
+       
         {error && (
           <p className="text-red-500 text-sm mb-3 text-center">{error}</p>
         )}
 
-        {/* Form */}
+       
         <form onSubmit={handleLogin} className="space-y-4">
 
-          {/* Email */}
+      
           <div>
             <label className="block text-gray-700">Email</label>
             <input
@@ -70,7 +70,7 @@ const SignInPage = () => {
             />
           </div>
 
-          {/* Password */}
+      
           <div>
             <label className="block text-gray-700">Password</label>
             <input
@@ -82,7 +82,7 @@ const SignInPage = () => {
             />
           </div>
 
-          {/* Login Button */}
+      
           <button
             type="submit"
             disabled={loading}
@@ -92,7 +92,6 @@ const SignInPage = () => {
           </button>
         </form>
 
-        {/* Google Login */}
         <button
           onClick={() => signIn.social({ provider: "google" })}
           className="w-full mt-4 border py-2 rounded-lg hover:bg-gray-100 transition"
@@ -100,7 +99,7 @@ const SignInPage = () => {
           Continue with Google
         </button>
 
-        {/* Register Link */}
+    
         <p className="text-sm text-center mt-4">
           Don’t have an account?{" "}
           <Link href="/auth/signup" className="text-purple-600 font-medium">

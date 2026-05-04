@@ -11,7 +11,7 @@ const TrendingCourses = () => {
       const res = await fetch("/data/courses.json");
       const data = await res.json();
 
-      // 📈 Get latest 3 courses (simulate trending)
+  
       const trending = data.slice(-3).reverse();
 
       setCourses(trending);

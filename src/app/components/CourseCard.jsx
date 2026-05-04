@@ -5,7 +5,7 @@ const CourseCard = ({ course }) => {
   return (
     <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col h-full border border-gray-100 hover:-translate-y-1">
 
-      {/* Image */}
+    
       <div className="relative w-full h-48 overflow-hidden">
         <Image
           src={course.image}
@@ -14,26 +14,26 @@ const CourseCard = ({ course }) => {
           className="object-cover group-hover:scale-105 transition-transform duration-300"
         />
 
-        {/* Category badge */}
+       
         <span className="absolute top-3 left-3 bg-black/70 text-white text-xs px-3 py-1 rounded-full">
           {course.category}
         </span>
       </div>
 
-      {/* Content */}
+ 
       <div className="p-5 flex flex-col flex-1">
 
-        {/* Title */}
+   
         <h2 className="text-lg font-bold text-gray-800 line-clamp-2 min-h-[48px]">
           {course.title}
         </h2>
 
-        {/* Instructor */}
+       
         <p className="text-sm text-gray-500 mt-1">
           👨‍🏫 {course.instructor}
         </p>
 
-        {/* Info row */}
+      
         <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
           <span className="flex items-center gap-1">
             ⭐ {course.rating}
@@ -44,12 +44,12 @@ const CourseCard = ({ course }) => {
           </span>
         </div>
 
-        {/* Duration */}
+     
         <p className="text-xs text-gray-400 mt-2">
           ⏱ {course.duration}
         </p>
 
-        {/* Button */}
+     
         <div className="mt-auto pt-5">
           <Link
             href={`/courses/${course.id}`}

@@ -12,7 +12,7 @@ export async function POST(req) {
       );
     }
 
-    // ✅ FIX: headers required for authentication context
+   
     const updatedUser = await auth.api.updateUser({
       body: {
         name,

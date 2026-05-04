@@ -10,7 +10,7 @@ const CoursesPage = () => {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
-  // 📡 Fetch data
+
   useEffect(() => {
     const fetchCourses = async () => {
       try {
@@ -27,12 +27,12 @@ const CoursesPage = () => {
     fetchCourses();
   }, []);
 
-  // 🔍 Search trigger
+ 
   const handleSearch = () => {
     setQuery(search);
   };
 
-  // 🎯 Filter logic
+
   const filteredCourses = courses.filter((course) =>
     course.title.toLowerCase().includes(query.toLowerCase())
   );
@@ -40,17 +40,16 @@ const CoursesPage = () => {
   return (
     <div className="w-[92%] mx-auto py-10">
 
-      {/* 📌 Title */}
+
       <h1 className="text-3xl font-bold text-center mb-6">
         All Courses
       </h1>
 
-      {/* 🔍 SEARCH BAR */}
+     
       <div className="flex justify-center mb-8">
 
         <div className="flex items-center gap-3 w-full max-w-md">
 
-          {/* Input */}
           <div className="relative flex-1">
 
             <Search
@@ -77,7 +76,7 @@ const CoursesPage = () => {
             />
           </div>
 
-          {/* Button */}
+      
           <button
             onClick={handleSearch}
             className="
@@ -98,7 +97,7 @@ const CoursesPage = () => {
         </div>
       </div>
 
-      {/* 📦 CONTENT */}
+     
       {loading ? (
         <p className="text-center text-gray-500">Loading courses...</p>
       ) : (
