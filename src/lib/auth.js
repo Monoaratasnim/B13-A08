@@ -1,17 +1,23 @@
 import { betterAuth } from "better-auth";
-import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
+import { MongoClient } from "mongodb";
 
-const client = new MongoClient(process.env.NEXT_PUBLIC_APP_URI);
+const uri = process.env.AUTH_DB_URI;
 
+if (!uri) {
+  throw new Error("AUTH_DB_URI is missing");
+}
 
-await client.connect();
+// ✅ create client once
+const client = new MongoClient(uri);
 
-const db = client.db("skillSphere");
+// ✅ cached connection (important)
+let clientPromise = client.connect();
 
 export const auth = betterAuth({
-  database: mongodbAdapter(db, {
-    client,
+  database: mongodbAdapter(async () => {
+    const connectedClient = await clientPromise;
+    return connectedClient.db("skillSphere");
   }),
 
   emailAndPassword: {
