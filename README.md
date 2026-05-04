@@ -1,4 +1,5 @@
 📚 SkillSphere
+
 🌐 Live Demo
 
 👉 https://b13-a08-seven.vercel.app/
@@ -38,15 +39,15 @@ Database: MongoDB (Atlas)
 Deployment: Vercel
 
 📦 NPM Packages Used
-next
-react
-react-dom
-better-auth
-mongodb
-swiper
-react-hot-toast
-tailwindcss
-daisyui
+next,
+react,
+react-dom,
+better-auth,
+mongodb,
+swiper,
+react-hot-toast,
+tailwindcss,
+daisyui,
 
 🚀 Deployment
 
