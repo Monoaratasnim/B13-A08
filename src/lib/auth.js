@@ -30,4 +30,12 @@ export const auth = betterAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     },
   },
+    user: {
+    additionalFields: {
+      image: {
+        type: "string",
+        required: false,
+      },
+    },
+  },
 });
