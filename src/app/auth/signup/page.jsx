@@ -12,36 +12,44 @@ const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleRegister = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const form = new FormData(e.target);
-    const name = form.get("name");
+  const form = new FormData(e.target);
+  const name = form.get("name");
+  const photo = form.get("photo");
 
-    try {
-      const res = await signUp.email({
-        name,
-        email: form.get("email"),
-        password: form.get("password"),
-        image:
-          form.get("photo")?.toString().trim() ||
-          `https://ui-avatars.com/api/?name=${name}`,
-      });
+  // ✅ SAFE image handling
+  const image =
+    photo && photo.toString().trim() !== ""
+      ? photo.toString().trim()
+      : `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}`;
 
-      if (res.error) {
-        toast.error(res.error.message || "Signup failed!");
-        return;
-      }
+  try {
+    const res = await signUp.email({
+      name,
+      email: form.get("email"),
+      password: form.get("password"),
+      image,
+    });
 
-   
-      await signOut();
-
-      toast.success("Account created successfully 🎉");
-      router.push("/auth/signin");
-
-    } catch (err) {
-      toast.error("Something went wrong!");
+    if (res.error) {
+      toast.error(res.error.message || "Signup failed!");
+      return;
     }
-  };
+
+    // ❌ REMOVE THIS (important)
+    // await signOut();
+
+    toast.success("Account created successfully 🎉");
+
+    // ✅ Better flow
+    router.push("/");
+
+  } catch (err) {
+    console.error(err);
+    toast.error(err.message || "Something went wrong!");
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 px-4 py-10">
