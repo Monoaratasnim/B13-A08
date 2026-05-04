@@ -11,12 +11,12 @@ const CourseDetailsPage = () => {
   const { data: session, isPending } = useSession();
 
   const [course, setCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [allowed, setAllowed] = useState(false);
 
-  // prevent duplicate toast (Strict Mode safe)
   const hasRedirected = useRef(false);
 
-  // 🔒 AUTH GUARD (PROPER FIX)
+  // 🔒 AUTH GUARD
   useEffect(() => {
     if (isPending) return;
 
@@ -38,6 +38,8 @@ const CourseDetailsPage = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
+        setLoading(true);
+
         const res = await fetch("/data/courses.json");
         const data = await res.json();
 
@@ -45,17 +47,20 @@ const CourseDetailsPage = () => {
           (item) => String(item.id) === String(params.id)
         );
 
-        setCourse(selected);
+        setCourse(selected || null);
       } catch (error) {
         console.log("Failed to load course:", error);
+        setCourse(null);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchCourse();
   }, [params.id]);
 
-  // ⏳ LOADING STATE (AUTH + SESSION)
-  if (isPending || !allowed) {
+  // ⏳ LOADING STATE (IMPORTANT FIX)
+  if (isPending || loading || !allowed) {
     return (
       <div className="flex justify-center items-center min-h-[60vh]">
         <span className="loading loading-spinner loading-lg text-primary"></span>
@@ -63,10 +68,24 @@ const CourseDetailsPage = () => {
     );
   }
 
-  if (!course) {
+  // ❌ NOT FOUND (NO FLASH NOW)
+  if (!loading && !course) {
     return (
-      <div className="text-center mt-10 text-red-500 font-semibold">
-        Course not found
+      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
+        <h2 className="text-2xl font-bold text-red-500">
+          Course Not Found
+        </h2>
+
+        <p className="text-gray-500 mt-2">
+          The course you are looking for does not exist.
+        </p>
+
+        <button
+          onClick={() => router.push("/courses")}
+          className="mt-6 px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition"
+        >
+          Go Back to Courses
+        </button>
       </div>
     );
   }
