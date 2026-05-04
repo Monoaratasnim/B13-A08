@@ -47,7 +47,7 @@ mongodb,
 swiper,
 react-hot-toast,
 tailwindcss,
-daisyui,
+daisyui
 
 🚀 Deployment
 
