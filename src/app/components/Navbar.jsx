@@ -31,7 +31,7 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link href="/myProfile" className={navLinkClass("/myProfile")}>
+        <Link href="/profile" className={navLinkClass("/profile")}>
           My Profile
         </Link>
       </li>
